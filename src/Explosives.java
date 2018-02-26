@@ -84,10 +84,22 @@ public class Explosives{
     	}
 		return result;
     }
-    
+  //@ requires prod.startsWith("Prod")
   //@ ensures \result.startsWith("Bat");
     public String findBat(String prod){
-    	
+    	boolean x=true;
+    	for(int i=0;i<nb_assign;i++){
+    		if(compatible(assign[i][1],prod)){
+    			for(int j=0;j<nb_assign&&!x;j++){
+    				if(!(i!=j&&assign[i][0].equals(assign[j][0])&&compatible(assign[i][1], assign[j][1]))){
+    					x=false;
+    				}
+    			}
+    			if(x){
+    				return assign[i][0];
+    			}
+    		}
+    	}
 		return "";
     	
     }
