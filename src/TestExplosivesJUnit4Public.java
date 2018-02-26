@@ -55,7 +55,7 @@ public class TestExplosivesJUnit4Public {
 	}
 	
 	@Test
-	public void testSequence_1_1() {
+	public void testSequence_2() {
 		try{
 			e=new Explosives();
 			e.nb_assign = 30;

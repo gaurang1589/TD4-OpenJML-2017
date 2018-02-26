@@ -39,14 +39,13 @@ public class Explosives{
       @*/
     /*@ public invariant // Prop 8 toutes les lignes du tableau des affectations sont differentes deux a deux
     @ (\forall int i; 0 <= i &&  i < nb_assign-1; 
-    @     (\forall int j; 1 <= j && j < nb_assign; 
-    @		(!(assign[i][0].equals(assign[j][0])))&&(!(assign[i][1].equals(assign[j][1])))));
+    @     (\forall int j; i < j && j < nb_assign; 
+    @		(!(assign[i][0].equals(assign[j][0])))||(!(assign[i][1].equals(assign[j][1])))));
     @      
     @*/
     /*@ public invariant // Prop 9 un produit ne peut pas etre stocke dans plus de trois batiments
    	@	(\forall int i; 0 <= i &&  i < nb_assign-1;
-    @     (\forall int j; 1 <= j && j < nb_assign &&k<4; 
-    @        ((assign[i][1]).equals(assign [j][1])==>k=k+1)));
+    @     (\num_of int j;i<j && j< nb_assign;((assign[i][1]).equals(assign [j][1])))<3);
     @
     @*/
    

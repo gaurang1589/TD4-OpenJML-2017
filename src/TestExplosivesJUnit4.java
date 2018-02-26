@@ -60,18 +60,6 @@ public class TestExplosivesJUnit4 {
 	
 	
 	@Test
-	public void testSequence_2() {
-		try{
-			e=new Explosives();		
-			e.add_incomp("Prod_Nitro","Prod_Glycerine");
-			e.add_incomp("Prod_Dyna","Prod_Mite");
-			e.add_incomp("Pat_1","Bat_2");
-		} 	catch(JmlAssertionError e){
-				handleJMLAssertionError(e);		
-		}
-	}
-	
-	@Test
 	public void testSequence_3() {
 		try{
 			e=new Explosives();		
