@@ -71,6 +71,18 @@ public class Explosives{
 	assign[nb_assign][1] = prod;
 	nb_assign = nb_assign+1;
     }
+    
     public void skip(){
+    }
+    
+    //@ ensures \result.startsWith("Bat");
+    public String findBat (String prod) {
+    	
+    	return "";
+    }
+    
+    public boolean compatible(String prod1, String prod2) {
+    	
+    	return true;
     }
 }
