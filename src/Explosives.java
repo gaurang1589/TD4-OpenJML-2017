@@ -52,7 +52,7 @@ public class Explosives{
    
 
 
-    /*@ ensures (\old(nb_inc)<=nb_inc;); // Prop 10 le nombre d'incompatibilites ne peut jamais diminuer
+    /*@ ensures nb_inc > \old(nb_inc); // Prop 10 le nombre d'incompatibilites ne peut jamais diminuer
     @ requires nb_inc < 49;
     @*/
     public void add_incomp(String prod1, String prod2){
