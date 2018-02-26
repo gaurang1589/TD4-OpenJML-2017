@@ -88,7 +88,16 @@ public class Explosives{
   //@ ensures \result.startsWith("Bat");
     public String findBat(String prod){
     	
+    	for(int i=0;i<nb_assign;i++) {
+    		if(compatible(assign[i][1],prod)){//find the compatible product
+    			for(int j=0;j<nb_assign;j++) {
+    				//find the batiment where the product is
+    				if(assign[j][1].equals(assign[i][1])) {
+    					return assign[j][0];
+    				}
+    			}
+    		}
+    	}
 		return "";
-    	
     }
 }
