@@ -37,8 +37,24 @@ public class Explosives{
       @           (!(assign[i][1]).equals(incomp[k][0])) 
       @              || (!(assign[j][1]).equals(incomp[k][1])))));
       @*/
+    /*@ public invariant // Prop 8 toutes les lignes du tableau des affectations sont differentes deux a deux
+    @ (\forall int i; 0 <= i &&  i < nb_assign-1; 
+    @     (\forall int j; 1 <= j && j < nb_assign; 
+    @		(!(assign[i][0].equals(assign[j][0])))&&(!(assign[i][1].equals(assign[j][1])))));
+    @      
+    @*/
+    /*@ public invariant // Prop 9 un produit ne peut pas etre stocke dans plus de trois batiments
+   	@	(\forall int i; 0 <= i &&  i < nb_assign-1;
+    @     (\forall int j; 1 <= j && j < nb_assign &&k<4; 
+    @        ((assign[i][1]).equals(assign [j][1])==>k=k+1)));
+    @
+    @*/
+   
 
 
+    /*@ ensures (\old(nb_inc)<=nb_inc;); // Prop 10 le nombre d'incompatibilites ne peut jamais diminuer
+    @ requires nb_inc < 49;
+    @*/
     public void add_incomp(String prod1, String prod2){
 	incomp[nb_inc][0] = prod1;
 	incomp[nb_inc][1] = prod2;
@@ -46,6 +62,8 @@ public class Explosives{
 	incomp[nb_inc+1][0] = prod2;
 	nb_inc = nb_inc+2;
      }
+    
+    //@ requires nb_assign < 30;
     public void add_assign(String bat, String prod){
 	assign[nb_assign][0] = bat;
 	assign[nb_assign][1] = prod;

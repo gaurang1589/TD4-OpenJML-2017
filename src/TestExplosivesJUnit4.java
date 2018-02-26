@@ -58,28 +58,6 @@ public class TestExplosivesJUnit4 {
 		}  
 	}
 	
-	@Test
-	public void testSequence_1() {
-		try{
-			e=new Explosives();
-			e.nb_inc = 50;
-			e.skip();
-
-		} 	catch(JmlAssertionError e){
-				handleJMLAssertionError(e);		
-		}
-	}
-	
-	@Test
-	public void testSequence_1_1() {
-		try{
-			e=new Explosives();
-			e.nb_assign = 30;
-			e.skip();
-		} 	catch(JmlAssertionError e){
-				handleJMLAssertionError(e);		
-		}
-	}
 	
 	@Test
 	public void testSequence_2() {
@@ -132,19 +110,6 @@ public class TestExplosivesJUnit4 {
 		}
 	}
 	
-	@Test
-	public void testSequence_6() {
-		try{
-			e=new Explosives();
-			e.add_incomp("Prod_Nitro","Prod_Glycerine");
-			e.nb_inc--;
-			e.incomp[e.nb_inc][0] = null;
-			e.incomp[e.nb_inc][1] = null;
-			e.skip();
-
-		} 	catch(JmlAssertionError e){
-				handleJMLAssertionError(e);		
-		}  
-	}
+	
 
 }
