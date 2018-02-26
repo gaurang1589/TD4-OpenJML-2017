@@ -51,9 +51,11 @@ public class Explosives{
    
 
 
-    /*@ ensures nb_inc > \old(nb_inc); // Prop 10 le nombre d'incompatibilites ne peut jamais diminuer
-    @ requires nb_inc < 49;
-    @*/
+    //@ ensures nb_inc > \old(nb_inc); // Prop 10 le nombre d'incompatibilites ne peut jamais diminuer
+    //@ requires (0 <= nb_inc && nb_inc < 50);
+    //@ requires prod1.startsWith("Prod") && prod2.startsWith("Prod");
+    //@ requires !prod1.equals(prod2);
+    //@ requires (\forall int i; 0 <= i && i < nb_inc; (\exists int j; 0 <= j && j < nb_inc; (incomp[i][0]).equals(incomp[j][1]) && (incomp[j][0]).equals(incomp[i][1])));
     public void add_incomp(String prod1, String prod2){
 	incomp[nb_inc][0] = prod1;
 	incomp[nb_inc][1] = prod2;
@@ -62,7 +64,8 @@ public class Explosives{
 	nb_inc = nb_inc+2;
      }
     
-    //@ requires nb_assign < 30;
+    //@ requires (0 <= nb_assign && nb_assign < 30);
+    //@ requires  bat.startsWith("Bat") && prod.startsWith("Prod");
     public void add_assign(String bat, String prod){
 	assign[nb_assign][0] = bat;
 	assign[nb_assign][1] = prod;
