@@ -75,14 +75,20 @@ public class Explosives{
     public void skip(){
     }
     
-    //@ ensures \result.startsWith("Bat");
-    public String findBat (String prod) {
-    	
-    	return "";
+    //@ requires prod1.startsWith("Prod") && prod2.startsWith("Prod");
+    //@ requires !prod1.equals(prod2);
+    public boolean compatible(String prod1, String prod2){
+    	boolean result=true;
+    	for(int i=0;result&&i<nb_inc;i++){
+    		result=!(incomp[i][0].equals(prod1)&&incomp[i][1].equals(prod2));
+    	}
+		return result;
     }
     
-    public boolean compatible(String prod1, String prod2) {
+  //@ ensures \result.startsWith("Bat");
+    public String findBat(String prod){
     	
-    	return true;
+		return "";
+    	
     }
 }
